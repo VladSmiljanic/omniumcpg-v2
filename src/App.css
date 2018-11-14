@@ -44,10 +44,15 @@ h4{
   color: var(--main-blue)
 }
 
+.border{
+  background-color:var(--main-blue);
+  height:40px;
+}
+
 .header{
   display:flex;
   align-items:center;
-  background-color: var(--main-blue);
+  background-color: white;
   height: 100px;
   width: 100vw;
 }
@@ -56,8 +61,13 @@ h4{
   display:flex;
   flex-direction:row;
   justify-content:space-between;
+  align-items:center;
 
   width:100%;
+}
+
+.omnium--logo{
+  
 }
 
 .header--options-container{
@@ -65,11 +75,15 @@ h4{
   flex-direction:row;
   justify-content:space-between;
 
-  background-color:red;
+  color: var(--main-blue);
   
   width:50%;
 
   padding:20px 40px;
+}
+
+.header--option{
+  font-size:14px;
 }
 
 .banner{
@@ -311,4 +325,23 @@ h4{
 
 .partner-logo__koury{
   width:160px;
+}
+
+.contact--info-section{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+  width:100%;
+}
+
+.contact--info-container{
+  display:flex;
+  flex-direction:column;
+  width:300px;
+}
+
+
+.map{
+  width:500px;
 }

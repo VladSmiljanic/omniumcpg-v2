@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Logo from './assets/omnium_logo.svg';
 import './App.css';
 import Background from './assets/background1.jpg';
 import ContactForm from './components/ContactForm';
@@ -32,15 +32,15 @@ class Header extends Component{
   return(
     <header className="header">
       <div className="header--container">
-        <div>Logo</div>
+        <img className="omnium--logo" src={Logo}/>
         <div className="header--options-container">
-          <div className="header--option"
+          <h1 className="header--option"
                name="who"
-               onClick={this.scrollView}>Who We Are</div>
-          <div className="header--option">What We Do</div>
-          <div className="header--option">How We Help</div>
-          <div className="header--option">Who We Work With</div>
-          <div className="header--option">Contact</div>
+               onClick={this.scrollView}>Who We Are</h1>
+          <h1 className="header--option">What We Do</h1>
+          <h1 className="header--option">How We Help</h1>
+          <h1 className="header--option">Who We Work With</h1>
+          <h1 className="header--option">Contact</h1>
         </div>
       </div>
     </header>
@@ -303,29 +303,31 @@ const Contact = () =>{
         <h2>Contact</h2>
       </div>
       <div className="section--info">
-        <div className="contact--info-container">
-          <div className="help--border">
-            <div className="help--container">
-              <h4 className="tool--desc">156 2nd St. Suite 216</h4>
-              <h4 className="tool--desc">San Franscisco, CA 94105</h4>
-              <h4 className="tool--desc">info@omniumcpg.com</h4>
-              <h4 className="tool--desc">omniumcpg.com</h4>
+        <div className="contact--info-section">
+          <div className="contact--info-container">
+            <div className="help--border">
+              <div className="help--container">
+                <h4 className="tool--desc">156 2nd St. Suite 216</h4>
+                <h4 className="tool--desc">San Franscisco, CA 94105</h4>
+                <h4 className="tool--desc">info@omniumcpg.com</h4>
+                <h4 className="tool--desc">omniumcpg.com</h4>
+              </div>
             </div>
+            <ContactForm/>
           </div>
-          <ContactForm/>
+          <a href="https://goo.gl/maps/JJ63uzb76PJ2" target="_blank">
+            <img className="map" src={Map}/>
+          </a>
         </div>
-        <a href="https://goo.gl/maps/JJ63uzb76PJ2" target="_blank">
-          <img src={Map}/>
-        </a>
       </div>
     </section>
   )
 };
 
-const Footer = () =>{
+const Border = () =>{
   return(
-    <section>
-      Footer
+    <section className="border">
+      
     </section>
   )
 };
@@ -334,6 +336,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Border/>
         <Header/>
         <Banner/>
         <WhoWeAre/>
@@ -341,7 +344,7 @@ class App extends Component {
         <HowWeHelp/>
         <Clients/>
         <Contact/>
-        <Footer/>
+        <Border/>
       </div>
     );
   }

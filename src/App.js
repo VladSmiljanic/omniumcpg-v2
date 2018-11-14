@@ -1,16 +1,42 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Golden from './assets/golden-gate.jpg';
+import Background from './assets/background1.jpg';
 import ContactForm from './components/ContactForm';
 
-const Header = () => {
+import ClifBar from './assets/Logos/clif.svg';
+import Musco from './assets/Logos/musco.jpeg';
+import LL from './assets/Logos/L&L.jpeg';
+import WildPlanet from './assets/Logos/WildPlanet_logo.jpg';
+import Guayaki from './assets/Logos/guayaki_logo.jpg';
+import Cacique from './assets/Logos/cacique_logo.png';
+import Raos from './assets/Logos/Raos.jpg';
+import MichaelAngelos from './assets/Logos/MichaelAngelos.png';
+import KiteHill from './assets/Logos/Kite Hill Logo.png';
+import Sovos from './assets/Logos/Sovos.jpg';
+import Koury from './assets/Logos/K_Koury.jpg';
+import Giansante from './assets/Logos/giansante-logo.png';
+
+import Map from './assets/map.png';
+
+class Header extends Component{
+
+  scrollView=(event)=>{
+    const name = event.target.name;
+    window.scrollTo({
+      top: "who",
+      bahvior: "smooth"
+    })
+  };
+  render(){
   return(
     <header className="header">
       <div className="header--container">
         <div>Logo</div>
         <div className="header--options-container">
-          <div className="header--option">Who We Are</div>
+          <div className="header--option"
+               name="who"
+               onClick={this.scrollView}>Who We Are</div>
           <div className="header--option">What We Do</div>
           <div className="header--option">How We Help</div>
           <div className="header--option">Who We Work With</div>
@@ -18,13 +44,13 @@ const Header = () => {
         </div>
       </div>
     </header>
-  )
+  )}
 };
 
 const Banner = () => {
   return(
-    <section className="banner">
-      <img className="banner--photo" src={Golden}/>
+    <section className="banner" style={{backgroundImage: `url(${Background})`}}>
+      <h2 className="banner--quote">Some Einsetin quote is suppose to go here but I don't know if you'll find it lame. - Michael Scott</h2>
     </section>
   )
 };
@@ -35,14 +61,14 @@ const People = (props) => {
       <div className="people--img">Image Here</div>
       <h2 className="people--name">{props.name},</h2>
       <h2 className="people--title">{props.title}</h2>
-      <h4 className="people--role">{props.role}</h4>
+      <h4 className="people--role">{props.desc}</h4>
     </div>
   )
 }
 
 const WhoWeAre = () =>{
   return(
-    <section className="section">
+    <section className="section" id="who">
       <div className="section--title blue-title">
         <h2>Who We Are</h2>
       </div>
@@ -54,31 +80,31 @@ const WhoWeAre = () =>{
           <People 
             name="Johnny Valeriote" 
             title="President" 
-            role="I'm a paragraph. Add materials here to include"/>
+            desc="I'm a paragraph. Add materials here to include"/>
           <People 
             name="Colin R. Davidson" 
             title="Role" 
-            role="I'm a paragraph. Add materials here to include"/>
+            desc="I'm a paragraph. Add materials here to include"/>
           <People 
             name="Adam Carter" 
             title="Role" 
-            role="I'm a paragraph. Add materials here to include"/>
+            desc="I'm a paragraph. Add materials here to include"/>
           <People 
             name="Fran Quense" 
             title="Role" 
-            role="I'm a paragraph. Add materials here to include"/>
+            desc="I'm a paragraph. Add materials here to include"/>
           <People 
             name="Bob Dumas" 
             title="Role" 
-            role="I'm a paragraph. Add materials here to include"/>
+            desc="I'm a paragraph. Add materials here to include"/>
           <People 
             name="Diane Giansante" 
             title="Role" 
-            role="I'm a paragraph. Add materials here to include"/>
+            desc="I'm a paragraph. Add materials here to include"/>
           <People 
             name="John Koury" 
             title="Role" 
-            role="I'm a paragraph. Add materials here to include"/>
+            desc="I'm a paragraph. Add materials here to include"/>
         </div>
       </div>
     </section>
@@ -181,15 +207,89 @@ const HowWeHelp = () =>{
   )
 };
 
+const Client = (props) =>{
+  const {url, clss, src} = props;
+  
+  return(
+    <a href={url} target="_blank">
+      <div class="partner-logo">
+        <img className={clss} src={src} alt="partner"/>
+      </div>
+    </a>
+  )
+}
+
 const Clients = () =>{
+  
   return(
     <section>
       <div className="section--title red-title">
         <h2>Who we work with</h2>
       </div>
       <div className="section--info">
-        <div className="clients--container">
-          <div>logos go here</div>
+        <div className="client-logos">
+          <div class="clients-logos__container">
+            <Client 
+              url="http://www.clifbar.com/"
+              clss="client-logo__clif"
+              src={ClifBar}
+              />
+            <Client 
+              url="https://www.olives.com/"
+              clss="partner-logo__musco"
+              src={Musco}
+              />
+            <Client 
+              url="https://www.lennylarry.com/"
+              clss="partner-logo__ll"
+              src={LL}
+              />
+            <Client 
+              url="http://www.wildplanetfoods.com/"
+              clss="partner-logo__wildplanet"
+              src={WildPlanet}
+              />
+            <Client 
+              url="http://guayaki.com/"
+              clss="partner-logo__guayaki"
+              src={Guayaki}
+              />
+            <Client 
+              url="https://www.caciqueinc.com/"
+              clss="partner-logo__cacique"
+              src={Cacique}
+              />
+            <Client 
+              url="http://www.raos.com/"
+              clss="partner-logo__raos"
+              src={Raos}
+              />
+            <Client 
+              url="http://www.michaelangelos.com/"
+              clss="partner-logo__angelos"
+              src={MichaelAngelos}
+              />
+            <Client 
+              url="http://www.kite-hill.com/"
+              clss="partner-logo__kitehill"
+              src={KiteHill}
+              />
+            <Client 
+              url="http://www.sovosbrands.com/"
+              clss="partner-logo__sovos"
+              src={Sovos}
+              />
+            <Client 
+              url=""
+              clss="partner-logo__koury"
+              src={Koury}
+              />
+            <Client 
+              url=""
+              clss="partner-logo__giansante"
+              src={Giansante}
+              />
+          </div>
         </div>
       </div>
     </section>
@@ -214,6 +314,9 @@ const Contact = () =>{
           </div>
           <ContactForm/>
         </div>
+        <a href="https://goo.gl/maps/JJ63uzb76PJ2" target="_blank">
+          <img src={Map}/>
+        </a>
       </div>
     </section>
   )

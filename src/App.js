@@ -28,6 +28,7 @@ class Header extends Component{
       bahvior: "smooth"
     })
   };
+
   render(){
   return(
     <header className="header">
@@ -333,6 +334,7 @@ const Border = () =>{
 };
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">

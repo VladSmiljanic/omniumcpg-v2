@@ -327,8 +327,14 @@ const Contact = () =>{
 
 const Border = () =>{
   return(
-    <section className="border">
-      
+    <section className="border--trim">
+      <div className="border--light">
+        <div className="triangle--light"></div>
+      </div>
+      <div className="border--blue">
+        <div className="triangle--blue"></div>
+      </div>
+      <div className="border--red"></div>
     </section>
   )
 };

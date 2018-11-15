@@ -44,9 +44,53 @@ h4{
   color: var(--main-blue)
 }
 
-.border{
-  background-color:var(--main-blue);
+.border--trim{
+  display:flex;
+  flex-direction:row;
   height:40px;
+  width:100vw;
+}
+
+.border--light{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  height:100%;
+  width:30%;
+  background-color: var(--main-lightblue);
+}
+
+.border--blue{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-end;
+  height:100%;
+  width:60%;
+  background-color: var(--main-blue);
+}
+
+.border--red{
+  height:100%;
+  width:10%;
+  background-color: var(--main-red);
+}
+
+.triangle--light{
+  position:relative;
+  left:40px;
+  width: 0px;
+  height: 0px;
+  border-bottom: solid 40px var(--main-lightblue);
+  border-right: solid 40px transparent;
+}
+
+.triangle--blue{
+  position:relative;
+  left:40px;
+  width: 0px;
+  height: 0px;
+  border-bottom: solid 40px var(--main-blue);
+  border-right: solid 40px transparent;
 }
 
 .header{

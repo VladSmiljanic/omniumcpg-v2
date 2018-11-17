@@ -213,7 +213,7 @@ const Client = (props) =>{
   
   return(
     <a href={url} target="_blank">
-      <div class="partner-logo">
+      <div className="partner-logo">
         <img className={clss} src={src} alt="partner"/>
       </div>
     </a>
@@ -229,7 +229,7 @@ const Clients = () =>{
       </div>
       <div className="section--info">
         <div className="client-logos">
-          <div class="clients-logos__container">
+          <div className="clients-logos__container">
             <Client 
               url="http://www.clifbar.com/"
               clss="client-logo__clif"

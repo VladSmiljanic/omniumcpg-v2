@@ -1,0 +1,75 @@
+[debug] [2018-11-15T02:54:57.364Z] ----------------------------------------------------------------------
+[debug] [2018-11-15T02:54:57.367Z] Command:       /Users/vladsmiljanic/.nvm/versions/node/v10.13.0/bin/node /Users/vladsmiljanic/.nvm/versions/node/v10.13.0/bin/firebase deploy --only functions
+[debug] [2018-11-15T02:54:57.367Z] CLI Version:   6.1.0
+[debug] [2018-11-15T02:54:57.367Z] Platform:      darwin
+[debug] [2018-11-15T02:54:57.367Z] Node Version:  v10.13.0
+[debug] [2018-11-15T02:54:57.369Z] Time:          Wed Nov 14 2018 21:54:57 GMT-0500 (Eastern Standard Time)
+[debug] [2018-11-15T02:54:57.369Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-15T02:54:57.387Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-15T02:54:57.388Z] > authorizing via signed-in user
+[debug] [2018-11-15T02:54:57.388Z] [iam] checking project omnium-cpg-staging for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2018-11-15T02:54:57.390Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/omnium-cpg-staging:testIamPermissions  
+
+[debug] [2018-11-15T02:54:57.755Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'omnium-cpg-staging'...
+[info] 
+[info] i  deploying functions
+[debug] [2018-11-15T02:55:00.918Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.1.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-11-15T02:55:00.919Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/omnium-cpg-staging?view=CONSUMER_VIEW  
+ 
+[debug] [2018-11-15T02:55:00.921Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/omnium-cpg-staging?view=CONSUMER_VIEW  
+ 
+[debug] [2018-11-15T02:55:01.609Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-15T02:55:01.625Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-11-15T02:55:01.626Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/omnium-cpg-staging  
+ 
+[debug] [2018-11-15T02:55:01.882Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-15T02:55:01.883Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/930500757777:getServerAppConfig  
+ 
+[debug] [2018-11-15T02:55:02.059Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-11-15T02:55:02.062Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/omnium-cpg-staging/configs  
+ 
+[debug] [2018-11-15T02:55:02.231Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (41.12 KB) for uploading
+[debug] [2018-11-15T02:55:02.564Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/omnium-cpg-staging/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2018-11-15T02:55:02.809Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-15T02:55:02.810Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-8766eb2b-7bc5-4921-95a7-a4122db6f0a3/c7ab3fba-f469-402f-9210-64ce43c3d56b.zip?GoogleAccessId=service-930500757777@gcf-admin-robot.iam.gserviceaccount.com&Expires=1542252295&Signature=HqeohBI0ZcfdWFsOJ9K5K3UVHU6Fm4RJ4g6Yo7ebXv7SNGLaYvMcH7tUzIqrHSbitSa7Og5S%2B3yXy21ltspXUkDzv%2B6KZYZiLf1%2FVMC7pQX5LgFPPpzXhdIZArmUbUKmDlRnXW%2BSNZpCMsWMqChq1guGmXPpL3Ukh8yuq8u2MHfM8nlLyy9PpR1ZzEkbKRuP5xSJt%2F7zNDaRiFoQMa2e3fQ%2FPUdkiDz1NBLZmHmC4xi7m%2B8UXlS1VgWHG6UCTkc6p%2BxxtjJ5lz8ji8RpveuTSnmpoxfzwzruG3pab7mdyAEv65OPIUBvL5g2UMGt4jFL1scsU43xhWCisnb28kvJwg%3D%3D  
+
+[debug] [2018-11-15T02:55:03.221Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-11-15T02:55:03.224Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/omnium-cpg-staging/locations/-/functions  
+ 
+[debug] [2018-11-15T02:55:03.757Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 6 function addMessage(us-central1)...
+[debug] [2018-11-15T02:55:03.761Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2018-11-15T02:55:03.764Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/omnium-cpg-staging/locations/us-central1/functions/addMessage {"updateMask":"sourceUploadUrl,name,labels,httpsTrigger"} 
+
+[debug] [2018-11-15T02:55:03.994Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-15T02:55:03.996Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/omnium-cpg-staging/locations/-/functions  
+ 
+[debug] [2018-11-15T02:55:04.472Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-15T02:55:04.474Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/b21uaXVtLWNwZy1zdGFnaW5nL3VzLWNlbnRyYWwxL2FkZE1lc3NhZ2UvcTN2YU9FakZjZkk  
+ 
+[debug] [2018-11-15T02:55:04.599Z] <<< HTTP RESPONSE 200
